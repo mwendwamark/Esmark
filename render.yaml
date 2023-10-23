@@ -1,12 +1,8 @@
-databases:
-  - name: Esmark
-    databaseName: esmark_db # Replace with a valid SQL database name
-    user: esmark_user # Replace with a valid DB user name
 services:
   - type: web
     name: Esmark
     runtime: ruby
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: "bundle install"  # Customize this as needed
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
